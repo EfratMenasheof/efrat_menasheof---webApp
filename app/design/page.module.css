@@ -1,0 +1,89 @@
+/* כל הדף */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  /* רקע כללי: צבע בסיס + טקסטורה שחוזרת */
+  background-image: url("/design-bg.png");
+  background-repeat: repeat;        /* חוזר גם ב-X וגם ב-Y */
+  background-size: auto;            /* גודל הטקסטורה כפי שייצאת מהפיגמה */
+  background-position: top left;
+}
+
+/* קונטיינר שעליו נבנה ה-layout */
+.phoneFrame {
+  position: relative;
+  width: 100%;        /* רוחב המסך */
+  max-width: 441px;   /* לא לעבור את רוחב הפיגמה */
+  height: 1538px;     /* נשאר ככה בשביל absolute */
+  margin: 0 auto;
+}
+
+/* בסיס משותף לכרטיסים */
+.card {
+  position: absolute;
+  border-radius: 10px;
+  color: #1b1613;
+  text-align: right;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.card p {
+  margin: 0;         /* בלי רווחים אוטומטיים מעל/מתחת לטקסט */
+}
+/* 🔶 כרטיס עליון – כתום עם תמונה */
+.cardTop {
+  top: 91px;
+  left: 5%;
+  /* right: 30%; */
+  width: 236px;
+  min-height: 328px;
+  padding: 15px 12px 13.5px 12.5px;
+  background: #c35731;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 211.5 / 213.5; /* כמו בפיגמה */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;  /* חותך את התמונה לתוך המסגרת */
+}
+
+/* 🟩 כרטיס ירוק */
+.cardGreen {
+  top: 479px;
+  right: 2%;
+  width: 241px;
+  min-height: 199px;
+  padding: 10px 21px 14px 21px;
+  background: #5f6040;
+}
+
+/* 🟧 כרטיס כתום (ללא תמונה) */
+.cardOrange {
+  top: 738px;
+  /* right: 30%; */
+  left: 5%;
+  width: 246px;
+  min-height: 348px;
+  padding: 10px 24px;
+  background: #d28832;
+}
+
+/* 🟥 כרטיס אדום תחתון */
+.cardRed {
+  top: 1146px;
+  /* left: 32%; */
+    right: 2%;
+  width: 264px;
+  min-height: 301px;
+  padding: 10px 14.5px;
+  background: #c35731;
+}

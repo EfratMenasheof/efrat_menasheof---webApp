@@ -2,6 +2,8 @@ import "@/styles/global.css";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import localFont from "next/font/local";
+
 import Navbar from "@/lib/components/Navbar";
 import Footer from "@/lib/components/Footer";
 
@@ -11,9 +13,46 @@ export const metadata: Metadata = {
     "A starter kit for wiritng code in the Digital Product Jam course.",
 };
 
+// הגדרת פונט Abraham עם כל המשקלים
+const abraham = localFont({
+  src: [
+    {
+      path: "./fonts/Abraham-Thin-TRIAL.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Abraham-Light-TRIAL.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Abraham-Regular-TRIAL.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Abraham-Medium-TRIAL.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Abraham-Bold-TRIAL.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Abraham-Black-TRIAL.otf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+});
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="he" dir="rtl" className={abraham.className}>
       <head>
         {/* Browser Favicon */}
         <link rel="icon" href="/icons/favicon.png" />
